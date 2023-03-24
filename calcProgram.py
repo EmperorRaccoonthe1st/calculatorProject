@@ -3,7 +3,7 @@ import math
 root = Tk()
 # Script
 global num
-num = "1"
+num = ""
 numList = []
 def putOne():
     global num
@@ -12,15 +12,15 @@ def putOne():
     
 def addition():
     global num
-    print(num)
-    numList.append(int(num))
-    num = ""
-    print(numList)
+    if num != "":
+        print(num)
+        numList.append(int(num))
+        num = ""
+        print(numList)
+        
+        
 
-putOne()
-putOne()
-putOne()
-addition()
+
 
 
 
@@ -35,7 +35,7 @@ addition()
 btn1 = Button(root, text="1", command = putOne, width=10, height=3).place(anchor=CENTER, relx=0.1, rely=0.6)
 
 # Add
-btnAdd = Button(root, text="+", command = addition(), width=10, height=3).place(anchor=CENTER, relx=0.5, rely=0.6)
+btnAdd = Button(root, text="+", command = addition, width=10, height=3).place(anchor=CENTER, relx=0.5, rely=0.6)
 
 
 
