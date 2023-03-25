@@ -2,27 +2,25 @@ from tkinter import *
 import math
 root = Tk()
 # Script
-global num1, num2, operatorValue, result, num1Inputed
+global num1, num2, operatorValue, result, num1Inputed, saveNum, nextInput
 num1Inputed = False
-result = "" 
+saveNum = False
+nextInput = False
+result = ""
 num1 = ""
 num2 = ""
 operatorValue = ""
-def putOne():
-    global num1, num2, result
-    # print(num1Inputed)
-    if num1Inputed == False:
-        num1 = num1 + "1"
-        print(num1)
-    else:
-        num2 = num2 + "1"
-        print(num2)
-    result = ""
+while saveNum == True:
+    num1Inputed = True
+    nextInput = False
 
 
 def putZero():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "0"
         print(num1)
@@ -33,8 +31,12 @@ def putZero():
 
 
 def putOne():
-    global num1, num2, result
+    global num1, num2, result, saveNum, nextInput
     #print(num1Inputed)
+    print("nextInput", nextInput, "saveNum", saveNum)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "1"
         print("num1", num1)
@@ -44,8 +46,11 @@ def putOne():
     result = ""
 
 def putTwo():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "2"
         print(num1)
@@ -55,8 +60,11 @@ def putTwo():
     result = ""
   
 def putThree():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "3"
         print(num1)
@@ -66,8 +74,11 @@ def putThree():
     result = ""
   
 def putFour():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "4"
         print(num1)
@@ -77,8 +88,11 @@ def putFour():
     result = ""
   
 def putFive():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "5"
         print(num1)
@@ -88,8 +102,11 @@ def putFive():
     result = ""
   
 def putSix():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "6"
         print(num1)
@@ -99,8 +116,11 @@ def putSix():
     result = ""
   
 def putSeven():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "7"
         print(num1)
@@ -110,8 +130,11 @@ def putSeven():
     result = ""
   
 def putEight():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "8"
         print(num1)
@@ -121,8 +144,11 @@ def putEight():
     result = ""
   
 def putNine():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
+    if nextInput == True:
+        nextInput = False
+        num1 = ""
     if num1Inputed == False:
         num1 = num1 + "9"
         print(num1)
@@ -132,65 +158,142 @@ def putNine():
     result = ""
   
 def putDot():
-    global num1, num2, result
-    print(num1Inputed)
+    global num1, num2, result, saveNum, nextInput
+    # print(num1Inputed)
     hasDot = False
-    if num1Inputed == False:
-        for x in num1:
-            if x == ".":
-                hasDot = True
-        if hasDot == False:
-            num1 = num1 + "."
-        print(num1)
-    else:
-        for x in num2:
-            if x == ".":
-                hasDot = True
-        if hasDot == False:
-            num2 = num2 + "."
-        print(num2)
-    result = ""
+    if nextInput == False:
+        if num1Inputed == False:
+            for x in num1:
+                if x == ".":
+                    hasDot = True
+            if hasDot == False:
+                num1 = num1 + "."
+            print(num1)
+        else:
+            for x in num2:
+                if x == ".":
+                    hasDot = True
+            if hasDot == False:
+                num2 = num2 + "."
+            print(num2)
+        result = ""
 
 
 def putFlip():
-    global num1, num2, num1Inputed
-    if num1Inputed == False:
-        print(float(num1))
-        if float(num1) > 0:
-            print(num1, "bigger")
-            num1 = "-" + num1
-            print(num1)
-        else:
-            print(num1, "smaller")
-            num1 = num1.lstrip(num1[0])
-            print(num1)
-    else:
-        if float(num2) > 0:
-            print(num2, "bigger")
-            num2 = "-" + num2
-            print(num2)
-        else:
-            print(num2, "smaller")
-            num2 = num2.lstrip(num2[0])
-            print(num2)
+    global num1, num2, num1Inputed, saveNum, nextInput
+    print("nextInput", nextInput)
+    #if nextInput == True:
+     #   nextInput = False
+      #  num1 = ""
+    if str(num1) != "":
+        if str(num1) != "0.0":
+            print(num1, num1Inputed)
+            if num1Inputed == False:
+                print(float(num1))
+                if float(num1) > 0:
+                    # print(num1, "bigger")
+                    num1 = "-" + num1
+                    print(num1)
+                else:
+                    # print(num1, "smaller")
+                    num1 = num1.lstrip(num1[0])
+                    print(num1)
+            else:
+                if float(num2) > 0:
+                    # print(num2, "bigger")
+                    num2 = "-" + num2
+                    print(num2)
+                else:
+                    # print(num2, "smaller")
+                    num2 = num2.lstrip(num2[0])
+                    print(num2)
           
 def addition():
-    global num1, operatorValue, num1Inputed
+    global num1, operatorValue, num1Inputed, saveNum, nextInput
     print(num1Inputed)
     if num1 != "":
-        operatorValue = "addition"
-        num1Inputed = True
+        if operatorValue == "":
+            nextInput = False
+            operatorValue = "addition"
+            num1Inputed = True
+        print("saveNum", saveNum, "nextInput", nextInput, "num1", num1)
+
+
+def subtraction():
+    global num1, operatorValue, num1Inputed, saveNum, nextInput
+    if num1 != "":
+        if operatorValue == "":
+            nextInput = False
+            operatorValue = "subtraction"
+            num1Inputed = True
+
+
+def Multiplication():
+    global num1, operatorValue, num1Inputed, saveNum, nextInput
+    if num1 != "":
+        if operatorValue == "":
+            nextInput = False
+            operatorValue = "Multiplication"
+            num1Inputed = True
+
+def Divsion():
+    global num1, operatorValue, num1Inputed, saveNum, nextInput
+    if num1 != "":
+        if operatorValue == "":
+            nextInput = False
+            operatorValue = "Division"
+            num1Inputed = True
 
 def equationFinish():
-    global num1, num2, operatorValue, result, num1Inputed
+    global num1, num2, operatorValue, result, num1Inputed, saveNum, nextInput
     print(num1Inputed)
+    print(num1, num2, operatorValue)
     if num1 != "" and num2 != "" and operatorValue != "":
         if operatorValue == "addition":
             result = float(num1) + float(num2)
-            num1, num2, operatorValue = "", "", ""
+            operatorValue = ""
+            num2 = ""
             num1Inputed = False
-            print(result)
-
+            num1 = str(result)
+            nextInput = True
+            print("new num1", num1)
+            print("result", result)
+        elif operatorValue == "subtraction":
+            result = float(num1) - float(num2)
+            operatorValue = ""
+            num2 = ""
+            num1Inputed = False
+            num1 = str(result)
+            nextInput = True
+            print("new num1", num1)
+            print("result", result)
+        elif operatorValue == "Multiplication":
+            result = float(num1) * float(num2)
+            operatorValue = ""
+            num2 = ""
+            num1Inputed = False
+            num1 = str(result)
+            nextInput = True
+            print("new num1", num1)
+            print("result", result)
+        elif operatorValue == "Division":
+            if str(num2) != "0":
+                result = float(num1) / float(num2)
+                operatorValue = ""
+                num2 = ""
+                num1Inputed = False
+                num1 = str(result)
+                nextInput = True
+                print("new num1", num1)
+                print("result", result)
+            else:
+                result = 0.0
+                operatorValue = ""
+                num2 = ""
+                num1Inputed = False
+                num1 = str(result)
+                nextInput = True
+                print("Cannot divide by zero😥")
 
 
 
@@ -241,8 +344,17 @@ btnFlip = Button(root, text="+/-", command = putFlip, width=5, height=1).place(a
 # Addition
 btnAdd = Button(root, text="+", command = addition, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.1)
 
+# Subtraction
+btnAdd = Button(root, text="-", command = subtraction, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.2)
+
+# Multiplication
+btnAdd = Button(root, text="x", command = Multiplication, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.3)
+
+# Division
+btnAdd = Button(root, text="÷", command = Divsion, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.4)
+
 # Equal
-btnAdd = Button(root, text="=", command = equationFinish, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.4)
+btnAdd = Button(root, text="=", command = equationFinish, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.5)
 
 
 
