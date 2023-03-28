@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 import math
 root = Tk()
+root.title("Calculator")
 # Script
 global num1, num2, operatorValue, result, num1Inputed, saveNum, nextInput
 num1Inputed = False
@@ -306,56 +307,59 @@ def equationFinish():
 
 # Interface
 
+# Frame
+mainFrame = ttk.Frame(root, padding="2i, 3i").grid(column=0, row=0)
+
 # 0
-btn0 = Button(root, text="0", command = putZero, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.4)
+btn0 = Button(mainFrame, text="0", command = putZero, width=5, height=1).grid(column=0, row=1)
 
 # 1
-btn1 = Button(root, text="1", command = putOne, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.1)
+btn1 = Button(mainFrame, text="1", command = putOne, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.1)
 
 # 2
-btn2 = Button(root, text="2", command = putTwo, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.1)
+btn2 = Button(mainFrame, text="2", command = putTwo, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.1)
 
 # 3
-btn3 = Button(root, text="3", command = putThree, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.1)
+btn3 = Button(mainFrame, text="3", command = putThree, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.1)
 
 # 4
-btn4 = Button(root, text="4", command = putFour, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.2)
+btn4 = Button(mainFrame, text="4", command = putFour, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.2)
 
 # 5
-btn5 = Button(root, text="5", command = putFive, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.2)
+btn5 = Button(mainFrame, text="5", command = putFive, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.2)
 
 # 6
-btn6 = Button(root, text="6", command = putSix, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.2)
+btn6 = Button(mainFrame, text="6", command = putSix, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.2)
 
 # 7
-btn7 = Button(root, text="7", command = putSeven, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.3)
+btn7 = Button(mainFrame, text="7", command = putSeven, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.3)
 
 # 8
-btn8 = Button(root, text="8", command = putEight, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.3)
+btn8 = Button(mainFrame, text="8", command = putEight, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.3)
 
 # 9
-btn9 = Button(root, text="9", command = putNine, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.3)
+btn9 = Button(mainFrame, text="9", command = putNine, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.3)
 
 # Dot
-btnDot = Button(root, text=".", command = putDot, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.4)
+btnDot = Button(mainFrame, text=".", command = putDot, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.4)
 
 # Flip
-btnFlip = Button(root, text="+/-", command = putFlip, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.4)
+btnFlip = Button(mainFrame, text="+/-", command = putFlip, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.4)
 
 # Addition
-btnAdd = Button(root, text="+", command = addition, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.1)
+btnAdd = Button(mainFrame, text="+", command = addition, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.1)
 
 # Subtraction
-btnAdd = Button(root, text="-", command = subtraction, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.2)
+btnAdd = Button(mainFrame, text="-", command = subtraction, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.2)
 
 # Multiplication
-btnAdd = Button(root, text="x", command = Multiplication, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.3)
+btnAdd = Button(mainFrame, text="x", command = Multiplication, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.3)
 
 # Division
-btnAdd = Button(root, text="÷", command = Divsion, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.4)
+btnAdd = Button(mainFrame, text="÷", command = Divsion, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.4)
 
 # Equal
-btnAdd = Button(root, text="=", command = equationFinish, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.5)
+btnAdd = Button(mainFrame, text="=", command = equationFinish, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.5)
 
 
 
