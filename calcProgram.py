@@ -308,59 +308,66 @@ def equationFinish():
 # Interface
 
 # Frame
-mainFrame = ttk.Frame(root, padding="2i, 3i").grid(column=0, row=0)
-
+mainFrame = ttk.Frame(root, padding="3c, 1c", relief="groove", borderwidth="1p")
+mainFrame.grid(column=0, row=0, sticky=W)
 # 0
-btn0 = Button(mainFrame, text="0", command = putZero, width=5, height=1).grid(column=0, row=1)
+btn0 = Button(mainFrame, text="0", command = putZero, width=5, height=1).grid(column=1, row=4)
 
 # 1
-btn1 = Button(mainFrame, text="1", command = putOne, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.1)
-
+btn1 = Button(mainFrame, text="1", command = putOne, width=5, height=1).grid(column=1, row=1, sticky=W)
 # 2
-btn2 = Button(mainFrame, text="2", command = putTwo, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.1)
+btn2 = Button(mainFrame, text="2", command = putTwo, width=5, height=1).grid(column=2, row=1, sticky=W)
 
 # 3
-btn3 = Button(mainFrame, text="3", command = putThree, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.1)
+btn3 = Button(mainFrame, text="3", command = putThree, width=5, height=1).grid(column=3, row=1, sticky=W)
 
 # 4
-btn4 = Button(mainFrame, text="4", command = putFour, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.2)
+btn4 = Button(mainFrame, text="4", command = putFour, width=5, height=1).grid(column=1, row=2, sticky=W)
 
 # 5
-btn5 = Button(mainFrame, text="5", command = putFive, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.2)
+btn5 = Button(mainFrame, text="5", command = putFive, width=5, height=1).grid(column=2, row=2, sticky=W)
 
 # 6
-btn6 = Button(mainFrame, text="6", command = putSix, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.2)
+btn6 = Button(mainFrame, text="6", command = putSix, width=5, height=1).grid(column=3, row=2, sticky=W)
 
 # 7
-btn7 = Button(mainFrame, text="7", command = putSeven, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.3)
+btn7 = Button(mainFrame, text="7", command = putSeven, width=5, height=1).grid(column=1, row=3, sticky=W)
 
 # 8
-btn8 = Button(mainFrame, text="8", command = putEight, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.3)
+btn8 = Button(mainFrame, text="8", command = putEight, width=5, height=1).grid(column=2, row=3, sticky=W)
 
 # 9
-btn9 = Button(mainFrame, text="9", command = putNine, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.3)
+btn9 = Button(mainFrame, text="9", command = putNine, width=5, height=1).grid(column=3, row=3, sticky=W)
 
 # Dot
-btnDot = Button(mainFrame, text=".", command = putDot, width=5, height=1).place(anchor=CENTER, relx=0.2, rely=0.4)
+btnDot = Button(mainFrame, text=".", command = putDot, width=5, height=1).grid(column=2, row=4, sticky=W)
 
 # Flip
-btnFlip = Button(mainFrame, text="+/-", command = putFlip, width=5, height=1).place(anchor=CENTER, relx=0.3, rely=0.4)
+btnFlip = Button(mainFrame, text="+/-", command = putFlip, width=5, height=1).grid(column=3, row=4, sticky=W)
 
 # Addition
-btnAdd = Button(mainFrame, text="+", command = addition, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.1)
+btnAdd = Button(mainFrame, text="+", command = addition, width=5, height=1).grid(column=4, row=1, sticky=W)
 
 # Subtraction
-btnAdd = Button(mainFrame, text="-", command = subtraction, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.2)
+btnAdd = Button(mainFrame, text="-", command = subtraction, width=5, height=1).grid(column=4, row=2, sticky=W)
 
 # Multiplication
-btnAdd = Button(mainFrame, text="x", command = Multiplication, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.3)
+btnAdd = Button(mainFrame, text="x", command = Multiplication, width=5, height=1).grid(column=4, row=3, sticky=W)
 
 # Division
-btnAdd = Button(mainFrame, text="÷", command = Divsion, width=5, height=1).place(anchor=CENTER, relx=0.4, rely=0.4)
+btnAdd = Button(mainFrame, text="÷", command = Divsion, width=5, height=1).grid(column=4, row=4, sticky=W)
 
 # Equal
-btnAdd = Button(mainFrame, text="=", command = equationFinish, width=5, height=1).place(anchor=CENTER, relx=0.1, rely=0.5)
+btnAdd = Button(mainFrame, text="=", command = equationFinish, width=5, height=1).grid(column=4, row=5, sticky=W)
 
+displayStyle = ttk.Style()
+displayStyle.configure("display.TLabel", background="Light Grey", relief="Raised")
+displayVar = StringVar()
+displayVar.set(num1)
+display = ttk.Label(mainFrame, textvariable=displayVar, style="display.TLabel").grid(column=1, row=0)
+while True:
+    display.configure(textvar)
+    break
 
 
 
