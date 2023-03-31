@@ -4,6 +4,9 @@ import math
 root = Tk()
 root.title("Calculator")
 # Script
+
+#Varibles
+
 global num1, num2, operatorValue, result, num1Inputed, saveNum, nextInput
 displayVar = StringVar()
 num1Inputed = False
@@ -17,6 +20,7 @@ while saveNum == True:
     num1Inputed = True
     nextInput = False
 
+# Functions
 
 def putZero():
     global num1, num2, result, saveNum, nextInput
@@ -289,7 +293,7 @@ def equationFinish():
             num1Inputed = False
             num1 = str(result)
             nextInput = True
-            displayVar.set(result)
+            displayVar.set(str(result))
             print("new num1", num1)
             print("result", result)
         elif operatorValue == "subtraction":
@@ -299,7 +303,7 @@ def equationFinish():
             num1Inputed = False
             num1 = str(result)
             nextInput = True
-            displayVar.set(result)
+            displayVar.set(str(result))
             print("new num1", num1)
             print("result", result)
         elif operatorValue == "Multiplication":
@@ -309,7 +313,7 @@ def equationFinish():
             num1Inputed = False
             num1 = str(result)
             nextInput = True
-            displayVar.set(result)
+            displayVar.set(str(result))
             print("new num1", num1)
             print("result", result)
         elif operatorValue == "Division":
@@ -320,7 +324,7 @@ def equationFinish():
                 num1Inputed = False
                 num1 = str(result)
                 nextInput = True
-                displayVar.set(result)
+                displayVar.set(str(result))
                 print("new num1", num1)
                 print("result", result)
             else:
@@ -350,6 +354,12 @@ displayStyle = ttk.Style()
 displayStyle.configure("display.TFrame", background="Light Grey")
 displayFrame = ttk.Frame(root, padding="50p, 5p", relief="sunken", style="display.TFrame")
 displayFrame.grid(column=0, row=0)
+
+#Display
+displayLabelStyle = ttk.Style()
+displayLabelStyle.configure("display.TLabel", background="Light Grey")
+display = ttk.Label(displayFrame, textvariable=displayVar, style="display.TLabel").grid(column=1, row=0)
+
 # 0
 btn0 = Button(mainFrame, text="0", command = putZero, width=5, height=1).grid(column=1, row=4)
 
@@ -400,12 +410,6 @@ btnAdd = Button(mainFrame, text="÷", command = Divsion, width=5, height=1).grid
 # Equal
 btnAdd = Button(mainFrame, text="=", command = equationFinish, width=5, height=1).grid(column=4, row=5, sticky=W)
 
-
-
-#displayVar.set()
-displayLabelStyle = ttk.Style()
-displayLabelStyle.configure("display.TLabel", background="Light Grey")
-display = ttk.Label(displayFrame, textvariable=displayVar, style="display.TLabel").grid(column=1, row=0)
 
 
 
