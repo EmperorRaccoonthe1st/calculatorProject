@@ -5,6 +5,7 @@ root = Tk()
 root.title("Calculator")
 # Script
 global num1, num2, operatorValue, result, num1Inputed, saveNum, nextInput
+displayVar = StringVar()
 num1Inputed = False
 saveNum = False
 nextInput = False
@@ -26,9 +27,11 @@ def putZero():
     if num1Inputed == False:
         num1 = num1 + "0"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "0"
         print(num2)
+        displayVar.set(num2)
     result = ""
 
 
@@ -42,9 +45,11 @@ def putOne():
     if num1Inputed == False:
         num1 = num1 + "1"
         print("num1", num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "1"
         print("num2", num2)
+        displayVar.set(num2)
     result = ""
 
 def putTwo():
@@ -56,9 +61,11 @@ def putTwo():
     if num1Inputed == False:
         num1 = num1 + "2"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "2"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putThree():
@@ -70,9 +77,11 @@ def putThree():
     if num1Inputed == False:
         num1 = num1 + "3"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "3"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putFour():
@@ -84,9 +93,11 @@ def putFour():
     if num1Inputed == False:
         num1 = num1 + "4"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "4"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putFive():
@@ -98,9 +109,11 @@ def putFive():
     if num1Inputed == False:
         num1 = num1 + "5"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "5"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putSix():
@@ -112,9 +125,11 @@ def putSix():
     if num1Inputed == False:
         num1 = num1 + "6"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "6"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putSeven():
@@ -126,9 +141,11 @@ def putSeven():
     if num1Inputed == False:
         num1 = num1 + "7"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "7"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putEight():
@@ -140,9 +157,11 @@ def putEight():
     if num1Inputed == False:
         num1 = num1 + "8"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "8"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putNine():
@@ -154,9 +173,11 @@ def putNine():
     if num1Inputed == False:
         num1 = num1 + "9"
         print(num1)
+        displayVar.set(num1)
     else:
         num2 = num2 + "9"
         print(num2)
+        displayVar.set(num2)
     result = ""
   
 def putDot():
@@ -170,6 +191,7 @@ def putDot():
                     hasDot = True
             if hasDot == False:
                 num1 = num1 + "."
+            displayVar.set(num1)
             print(num1)
         else:
             for x in num2:
@@ -177,6 +199,7 @@ def putDot():
                     hasDot = True
             if hasDot == False:
                 num2 = num2 + "."
+            displayVar.set(num2)
             print(num2)
         result = ""
 
@@ -195,19 +218,23 @@ def putFlip():
                 if float(num1) > 0:
                     # print(num1, "bigger")
                     num1 = "-" + num1
+                    displayVar.set(num1)
                     print(num1)
                 else:
                     # print(num1, "smaller")
                     num1 = num1.lstrip(num1[0])
                     print(num1)
+                    displayVar.set(num1)
             else:
                 if float(num2) > 0:
                     # print(num2, "bigger")
                     num2 = "-" + num2
+                    displayVar.set(num2)
                     print(num2)
                 else:
                     # print(num2, "smaller")
                     num2 = num2.lstrip(num2[0])
+                    displayVar.set(num2)
                     print(num2)
           
 def addition():
@@ -215,6 +242,7 @@ def addition():
     print(num1Inputed)
     if num1 != "":
         if operatorValue == "":
+            displayVar.set("+")
             nextInput = False
             operatorValue = "addition"
             num1Inputed = True
@@ -225,6 +253,7 @@ def subtraction():
     global num1, operatorValue, num1Inputed, saveNum, nextInput
     if num1 != "":
         if operatorValue == "":
+            displayVar.set("-")
             nextInput = False
             operatorValue = "subtraction"
             num1Inputed = True
@@ -234,6 +263,7 @@ def Multiplication():
     global num1, operatorValue, num1Inputed, saveNum, nextInput
     if num1 != "":
         if operatorValue == "":
+            displayVar.set("x")
             nextInput = False
             operatorValue = "Multiplication"
             num1Inputed = True
@@ -242,6 +272,7 @@ def Divsion():
     global num1, operatorValue, num1Inputed, saveNum, nextInput
     if num1 != "":
         if operatorValue == "":
+            displayVar.set("÷")
             nextInput = False
             operatorValue = "Division"
             num1Inputed = True
@@ -258,6 +289,7 @@ def equationFinish():
             num1Inputed = False
             num1 = str(result)
             nextInput = True
+            displayVar.set(result)
             print("new num1", num1)
             print("result", result)
         elif operatorValue == "subtraction":
@@ -267,6 +299,7 @@ def equationFinish():
             num1Inputed = False
             num1 = str(result)
             nextInput = True
+            displayVar.set(result)
             print("new num1", num1)
             print("result", result)
         elif operatorValue == "Multiplication":
@@ -276,6 +309,7 @@ def equationFinish():
             num1Inputed = False
             num1 = str(result)
             nextInput = True
+            displayVar.set(result)
             print("new num1", num1)
             print("result", result)
         elif operatorValue == "Division":
@@ -286,6 +320,7 @@ def equationFinish():
                 num1Inputed = False
                 num1 = str(result)
                 nextInput = True
+                displayVar.set(result)
                 print("new num1", num1)
                 print("result", result)
             else:
@@ -295,6 +330,7 @@ def equationFinish():
                 num1Inputed = False
                 num1 = str(result)
                 nextInput = True
+                displayVar.set("Cannot divide by zero😥")
                 print("Cannot divide by zero😥")
 
 
@@ -307,9 +343,13 @@ def equationFinish():
 
 # Interface
 
-# Frame
+# Frames
 mainFrame = ttk.Frame(root, padding="3c, 1c", relief="groove", borderwidth="1p")
-mainFrame.grid(column=0, row=0, sticky=W)
+mainFrame.grid(column=0, row=2, sticky=W)
+displayStyle = ttk.Style()
+displayStyle.configure("display.TFrame", background="Light Grey")
+displayFrame = ttk.Frame(root, padding="50p, 5p", relief="sunken", style="display.TFrame")
+displayFrame.grid(column=0, row=0)
 # 0
 btn0 = Button(mainFrame, text="0", command = putZero, width=5, height=1).grid(column=1, row=4)
 
@@ -360,14 +400,13 @@ btnAdd = Button(mainFrame, text="÷", command = Divsion, width=5, height=1).grid
 # Equal
 btnAdd = Button(mainFrame, text="=", command = equationFinish, width=5, height=1).grid(column=4, row=5, sticky=W)
 
-displayStyle = ttk.Style()
-displayStyle.configure("display.TLabel", background="Light Grey", relief="Raised")
-displayVar = StringVar()
-displayVar.set(num1)
-display = ttk.Label(mainFrame, textvariable=displayVar, style="display.TLabel").grid(column=1, row=0)
-while True:
-    display.configure(textvar)
-    break
+
+
+#displayVar.set()
+displayLabelStyle = ttk.Style()
+displayLabelStyle.configure("display.TLabel", background="Light Grey")
+display = ttk.Label(displayFrame, textvariable=displayVar, style="display.TLabel").grid(column=1, row=0)
+
 
 
 
