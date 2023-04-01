@@ -3,6 +3,9 @@ from tkinter import ttk
 import math
 root = Tk()
 root.title("Calculator")
+root.geometry("410x245")
+root.minsize(410, 245)
+root.maxsize(410, 245)
 # Script
 
 #Varibles
